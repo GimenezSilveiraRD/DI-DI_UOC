@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnPath</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="images/header.jpg" alt="Empower Your Learning" class="header-image">
+            <h1>Courses</h1>
+            <p>Discover, Learn, and Grow with Our Certified Courses</p>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search for courses..." oninput="searchCourses()">
+            <button onclick="searchCourses()">Search</button>
+            <div id="suggestions" class="suggestions"></div>
+        </div>
+        <div class="filters">
+            <label for="content-type">Content Type:</label>
+            <select id="content-type">
+                <option value="all">All</option>
+                <option value="video">Video</option>
+                <option value="article">Article</option>
+                <option value="course">Course</option>
+            </select>
+            <label for="duration">Duration:</label>
+            <select id="duration">
+                <option value="all">All</option>
+                <option value="short">Short</option>
+                <option value="medium">Medium</option>
+                <option value="long">Long</option>
+            </select>
+            <label for="certification">Certification:</label>
+            <select id="certification">
+                <option value="all">All</option>
+                <option value="yes">Certified</option>
+                <option value="no">Not Certified</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section id="recommendations">
+            <h2>Recommended Courses</h2>
+            <div class="course-list" id="course-list">
+                <!-- Courses will be dynamically inserted here -->
+            </div>
+        </section>
+        <section id="additional-courses">
+            <h2>You Might Also Like</h2>
+            <div class="course-list" id="additional-course-list">
+                <!-- Additional courses will be dynamically inserted here -->
+            </div>
+        </section>
+        <section id="course-details" class="hidden">
+            <div id="course-details-content">
+                <!-- Course details will be dynamically inserted here -->
+            </div>
+            <button id="back-to-menu-button">Back to Menu</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024. Esto es solo un prototipo para un trabajo universitario. No tiene fines de lucro.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div id="chatbot">
+        <button class="chatbot-button" onclick="toggleChatbot()">Chat with us</button>
+        <div class="chatbot-content hidden">
+            <span class="close-button" onclick="toggleChatbot()">&times;</span>
+            <div class="chatbot-messages" id="chatbot-messages"></div>
+            <form id="chatbot-form" onsubmit="sendMessage(event)">
+                <input type="text" id="chatbot-input" placeholder="Type a message..." required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
