@@ -99,7 +99,7 @@ function sendMessage(event) {
         displayMessage(message, 'user-message');
         input.value = '';
         setTimeout(() => {
-            displayMessage('Hello, how can I help you?.', 'bot-message');
+            displayMessage('Hello, how can I help you?', 'bot-message');
         }, 1000);
     }
 }
